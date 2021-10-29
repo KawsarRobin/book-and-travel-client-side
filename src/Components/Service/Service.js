@@ -18,14 +18,15 @@ const Service = (props) => {
           </Card.Title>
           <Card.Text>
             <p className="ps-2 text-start">
-              <i class="far fa-smile-beam"></i> <span>{rating} Superb </span>
+              <i className="far fa-smile-beam"></i>{' '}
+              <span>{rating} Superb </span>
             </p>
             <span>{description.slice(0, 100)}...</span>
           </Card.Text>{' '}
           <hr />
           <div className="d-flex justify-content-between px-3">
             <span>
-              <i class="far fa-clock"></i> {time} Days
+              <i className="far fa-clock"></i> {time} Days
             </span>
             <p>
               <Link to={`/service/${_id}`}>
