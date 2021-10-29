@@ -44,8 +44,12 @@ const AddService = () => {
           {...register('img', { required: true })}
         />
         <input
+          placeholder="Price in $"
+          {...register('price', { required: true })}
+        />
+        <input
           placeholder="Rating (Within 10)"
-          type="number"
+          type="text"
           {...register('rating', { required: true })}
         />
         <input

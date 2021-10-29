@@ -10,6 +10,7 @@ import MyBooking from './Components/MyBooking/MyBooking';
 import Navigation from './Components/Navigation/Navigation';
 import NotFound from './Components/Notfound/NotFound';
 import Register from './Components/Register/Register';
+import ServiceDetails from './Components/ServiceDetails/ServiceDetails';
 import Services from './Components/Services/Services';
 import AuthProvider from './Context/AuthProvider';
 import Home from './Pages/Home/Home';
@@ -30,6 +31,9 @@ function App() {
             </Route>
             <Route path="/services">
               <Services></Services>
+            </Route>
+            <Route path="/service/:id">
+              <ServiceDetails></ServiceDetails>
             </Route>
             <PrivateRoute path="/about">
               <AboutUs></AboutUs>
