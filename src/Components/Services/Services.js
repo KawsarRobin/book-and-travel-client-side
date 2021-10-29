@@ -11,13 +11,21 @@ const Services = () => {
       .then((data) => setServices(data));
   }, []);
   return (
-    <Container>
-      <Row xs={1} md={3} className="g-4">
-        {services.map((service) => (
-          <Service key={service._id} service={service}></Service>
-        ))}
-      </Row>
-    </Container>
+    <div style={{ backgroundColor: '#e8e2e1' }}>
+      <Container className="py-5">
+        <h2 className="text-center fw-bolder">
+          Our <span className="text-danger">Tour Plans</span> For You
+        </h2>
+        <p className="text-secondary text-center">
+          You`re guaranteed to find something that`s right for you.
+        </p>
+        <Row xs={1} md={3} className="g-4">
+          {services.map((service) => (
+            <Service key={service._id} service={service}></Service>
+          ))}
+        </Row>
+      </Container>
+    </div>
   );
 };
 
