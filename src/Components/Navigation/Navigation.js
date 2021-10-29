@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Navigation = () => {
-  const { user, HandleSignOut } = useAuth();
+  const { user, logOut } = useAuth();
   return (
     <div>
       <Navbar bg="light" expand="lg">
@@ -33,7 +33,7 @@ const Navigation = () => {
                   <Nav.Link as={Link} to="/addService" className="text-dark">
                     Add Service
                   </Nav.Link>
-                  <Button variant="light" onClick={HandleSignOut}>
+                  <Button variant="light" onClick={logOut}>
                     {' '}
                     LogOut
                   </Button>
