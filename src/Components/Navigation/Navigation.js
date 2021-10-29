@@ -1,15 +1,18 @@
 import React from 'react';
-import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Navigation = () => {
   const { user, logOut } = useAuth();
   return (
-    <div>
-      <Navbar bg="light" expand="lg">
-        <Container fluid>
-          <Navbar.Brand href="#">Book&Travel</Navbar.Brand>
+    <div style={{ backgroundColor: '#C9E5DE', fontWeight: '600' }}>
+      <Navbar expand="lg">
+        <Container>
+          <Navbar.Brand href="#">
+            <span className="fw-bold text-danger"> Book</span>&
+            <span className="fw-bold text-info">Travel</span>
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -17,8 +20,14 @@ const Navigation = () => {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link as={Link} to="/home">
+              <Nav.Link className=" text-black" as={Link} to="/home">
                 Home
+              </Nav.Link>
+              <Nav.Link className=" text-black" as={Link} to="/about">
+                About
+              </Nav.Link>
+              <Nav.Link className=" text-black" as={Link} to="/contact">
+                Contact
               </Nav.Link>
             </Nav>
             <Navbar.Collapse className="justify-content-end ">
@@ -30,10 +39,14 @@ const Navigation = () => {
                   <Nav.Link as={Link} to="/manageBooking" className="text-dark">
                     Manage Bookings
                   </Nav.Link>
-                  <Nav.Link as={Link} to="/addService" className="text-dark">
+                  {/* <Nav.Link as={Link} to="/addService" className="text-dark">
                     Add Service
-                  </Nav.Link>
-                  <Button variant="light" onClick={logOut}>
+                  </Nav.Link> */}
+                  <Button
+                    variant="outline-secondary"
+                    size="sm"
+                    onClick={logOut}
+                  >
                     {' '}
                     LogOut
                   </Button>
@@ -45,18 +58,13 @@ const Navigation = () => {
               )}
 
               <Navbar.Text>
-                <a href="#login" className="text-dark text-decoration-none">
+                <a
+                  href="#login"
+                  className="text-dark text-decoration-none ms-2"
+                >
                   {user?.displayName}
                 </a>
               </Navbar.Text>
-              <NavDropdown title="More" id="navbarScrollingDropdown">
-                <NavDropdown.Item as={Link} to="/contact">
-                  Contact Us
-                </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/about">
-                  About Us
-                </NavDropdown.Item>
-              </NavDropdown>
             </Navbar.Collapse>
           </Navbar.Collapse>
         </Container>

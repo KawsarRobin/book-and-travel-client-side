@@ -17,7 +17,11 @@ const Footer = () => {
       <Container>
         <Row xs={1} md={4} className="p-5 g-3 text-white">
           <Col>
-            <h2>Book&Travel</h2>
+            <h2>
+              {' '}
+              <span className="fw-bold text-danger"> Book</span>&
+              <span className="fw-bold text-info">Travel</span>
+            </h2>
             <p>
               A Place you can trust to travel around world. Travel your dream
               place with us, and live the days your waiting for..
