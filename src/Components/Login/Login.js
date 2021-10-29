@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { useHistory, useLocation } from 'react-router';
+import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
@@ -21,7 +22,9 @@ const Login = () => {
   return (
     <div className="m-5">
       <Button onClick={handleSignInWithGoogle}> Login With Google</Button>
-      <Button onClick={HandleSignOut}> Log Out</Button>
+      <Link to="/register">
+        <Button>New Here?</Button>
+      </Link>
     </div>
   );
 };
