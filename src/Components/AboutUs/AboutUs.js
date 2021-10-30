@@ -12,7 +12,6 @@ const AboutUs = () => {
                 className=" rounded rounded-5 img-fluid"
                 src={`https://image.freepik.com/free-photo/tourist-presenting-something_1368-7018.jpg`}
                 alt=""
-                className="img-fluid"
               />
             </div>
           </Col>

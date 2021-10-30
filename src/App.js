@@ -9,11 +9,12 @@ import ManageBookings from './Components/ManageBookings/ManageBookings';
 import MyBooking from './Components/MyBooking/MyBooking';
 import Navigation from './Components/Navigation/Navigation';
 import NotFound from './Components/Notfound/NotFound';
+import PlaceOrder from './Components/PlaceOrder/PlaceOrder';
 import Register from './Components/Register/Register';
-import ServiceDetails from './Components/ServiceDetails/ServiceDetails';
 import Services from './Components/Services/Services';
 import AuthProvider from './Context/AuthProvider';
 import Home from './Pages/Home/Home';
+import PrivateRoute from './PrivetRoute/PrivateRoute';
 
 function App() {
   const Styles = {
@@ -35,9 +36,10 @@ function App() {
               <Route path="/services">
                 <Services></Services>
               </Route>
-              <Route path="/service/:id">
-                <ServiceDetails></ServiceDetails>
-              </Route>
+
+              <PrivateRoute path="/placeorder/:id">
+                <PlaceOrder></PlaceOrder>
+              </PrivateRoute>
               <Route path="/about">
                 <AboutUs></AboutUs>
               </Route>
