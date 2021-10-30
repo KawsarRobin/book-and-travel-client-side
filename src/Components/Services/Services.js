@@ -1,32 +1,45 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Spinner } from 'react-bootstrap';
 import Service from '../Service/Service';
 
 const Services = () => {
   const [services, setServices] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch('http://localhost:5000/services')
       .then((res) => res.json())
-      .then((data) => setServices(data));
+      .then((data) => {
+        setServices(data);
+        setIsLoading(false);
+      });
   }, []);
-  return (
-    <div style={{ backgroundColor: '#F3F4F8' }}>
-      <Container className="py-5">
-        <h2 className="text-center fw-bolder">
-          Our <span className="text-info">Packages</span> For You
-        </h2>
-        <p className="text-secondary text-center">
-          You`re guaranteed to find something that`s right for you.
-        </p>
-        <Row xs={1} md={3} className="g-4">
-          {services.map((service) => (
-            <Service key={service._id} service={service}></Service>
-          ))}
-        </Row>
-      </Container>
-    </div>
-  );
+
+  if (isLoading) {
+    return (
+      <div className="text-center m-5">
+        <Spinner animation="border" variant="secondary" />;
+      </div>
+    );
+  } else {
+    return (
+      <div style={{ backgroundColor: '#F3F4F8' }}>
+        <Container className="py-5">
+          <h2 className="text-center fw-bolder">
+            Our <span className="text-info">Packages</span> For You
+          </h2>
+          <p className="text-secondary text-center">
+            You`re guaranteed to find something that`s right for you.
+          </p>
+          <Row xs={1} md={3} className="g-4">
+            {services.map((service) => (
+              <Service key={service._id} service={service}></Service>
+            ))}
+          </Row>
+        </Container>
+      </div>
+    );
+  }
 };
 
 export default Services;

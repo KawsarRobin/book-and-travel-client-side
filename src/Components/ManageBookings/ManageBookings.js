@@ -3,8 +3,9 @@ import { Spinner, Table } from 'react-bootstrap';
 
 const ManageBookings = () => {
   const [allBookings, setAllBookings] = useState([]);
-  const [isloading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
+  //Load all the bookings
   useEffect(() => {
     fetch('http://localhost:5000/allOrders')
       .then((res) => res.json())
@@ -14,7 +15,27 @@ const ManageBookings = () => {
       });
   }, []);
 
-  if (isloading) {
+  // Deleted or cancle booking by id
+  const handleDelete = (id) => {
+    if (window.confirm('Are You Sure to cancel Booking?')) {
+      const url = `http://localhost:5000/deleteMyOrder/${id}`;
+      fetch(url, {
+        method: 'DELETE',
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            alert('You have successfully Canceled Booking!!');
+            const remainingBooking = allBookings.filter(
+              (booking) => booking._id !== id
+            );
+            setAllBookings(remainingBooking);
+          }
+        });
+    }
+  };
+
+  if (isLoading) {
     return (
       <div className="text-center m-5">
         <Spinner animation="border" variant="secondary" />;
@@ -49,7 +70,10 @@ const ManageBookings = () => {
                 <td>{booking.status}</td>
 
                 <td>
-                  <button className="btn btn-danger">
+                  <button
+                    onClick={() => handleDelete(booking._id)}
+                    className="btn btn-danger"
+                  >
                     Cancel <i className="fas fa-trash-alt "></i>
                   </button>
                 </td>
