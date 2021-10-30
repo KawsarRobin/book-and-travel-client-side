@@ -41,9 +41,9 @@ const Login = () => {
   };
 
   return (
-    <Container className="p-md-5 p-sm-2 my-sm-4 my-md-5 w-75 border shadow-lg border-2 rounded">
+    <Container className="p-md-5 my-5 w-75 border shadow-lg border-2 rounded">
       <Form onSubmit={handleEmailSignIn}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="my-3" controlId="formBasicEmail">
           <h3>Please Login</h3>
           <Form.Label></Form.Label>
           <Form.Control
@@ -84,7 +84,7 @@ const Login = () => {
       </Form>
       <br />
       <Link className="text-decoration-none" to="register">
-        <h5 className="text-dark"> Don't Have Account ? </h5>
+        <h5 className="text-dark mb-3"> Don't Have Account ? </h5>
       </Link>
     </Container>
   );

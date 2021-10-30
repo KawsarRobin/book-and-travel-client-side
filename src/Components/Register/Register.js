@@ -44,9 +44,9 @@ const Register = () => {
   };
 
   return (
-    <Container className="p-md-5 p-sm-2 my-md-5 my-sm-2 w-75 w-sm-100 border shadow-lg border-3 rounded">
+    <Container className="p-md-5 my-5 w-75 w-sm-100 border shadow-lg border-3 rounded">
       <Form onSubmit={handleRegister}>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="my-3" controlId="formBasicPassword">
           <Form.Label>
             {' '}
             <h3>Register</h3>{' '}
@@ -108,7 +108,7 @@ const Register = () => {
       </Form>
       <br />
       <Link className="text-decoration-none" to="/login">
-        <h5 className="text-dark"> Already Registered? </h5>{' '}
+        <h5 className="text-dark mb-3"> Already Registered? </h5>{' '}
       </Link>
     </Container>
   );
