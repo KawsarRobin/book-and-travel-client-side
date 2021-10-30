@@ -39,9 +39,9 @@ const Navigation = () => {
                   <Nav.Link as={Link} to="/manageBooking" className="text-dark">
                     Manage Bookings
                   </Nav.Link>
-                  {/* <Nav.Link as={Link} to="/addService" className="text-dark">
-                    Add Service
-                  </Nav.Link> */}
+                  <Nav.Link as={Link} to="/addService" className="text-dark">
+                    Manage Services
+                  </Nav.Link>
                   <Button
                     variant="outline-secondary"
                     size="sm"

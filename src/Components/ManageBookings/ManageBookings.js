@@ -4,6 +4,7 @@ import { Spinner, Table } from 'react-bootstrap';
 const ManageBookings = () => {
   const [allBookings, setAllBookings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isApproved, setIsApproved] = useState(true);
 
   //Load all the bookings
   useEffect(() => {
@@ -13,7 +14,30 @@ const ManageBookings = () => {
         setAllBookings(data);
         setIsLoading(false);
       });
-  }, []);
+  }, [isApproved]);
+
+  // Update pending status to approved
+
+  const handleUpdate = (id) => {
+    const status = {
+      status: 'Approved',
+    };
+
+    fetch(`http://localhost:5000/upadateOrders/${id}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(status),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          alert('Booking Approved Succesfully');
+          setIsApproved(false);
+        }
+      });
+  };
 
   // Deleted or cancle booking by id
   const handleDelete = (id) => {
@@ -78,7 +102,12 @@ const ManageBookings = () => {
                   </button>
                 </td>
                 <td>
-                  <button className="btn btn-success">Approve</button>
+                  <button
+                    onClick={() => handleUpdate(booking._id)}
+                    className="btn btn-success"
+                  >
+                    Approve
+                  </button>
                 </td>
               </tr>
             ))}

@@ -52,15 +52,15 @@ function App() {
               <Route path="/register">
                 <Register></Register>
               </Route>
-              <Route path="/bookings">
+              <PrivateRoute path="/bookings">
                 <MyBooking></MyBooking>
-              </Route>
-              <Route path="/manageBooking">
+              </PrivateRoute>
+              <PrivateRoute path="/manageBooking">
                 <ManageBookings></ManageBookings>
-              </Route>
-              <Route path="/addService">
+              </PrivateRoute>
+              <PrivateRoute path="/addService">
                 <AddService></AddService>
-              </Route>
+              </PrivateRoute>
               <Route path="*">
                 <NotFound></NotFound>
               </Route>
