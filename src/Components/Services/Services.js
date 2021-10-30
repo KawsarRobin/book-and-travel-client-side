@@ -11,10 +11,10 @@ const Services = () => {
       .then((data) => setServices(data));
   }, []);
   return (
-    <div style={{ backgroundColor: '#e8e2e1' }}>
+    <div style={{ backgroundColor: '#F3F4F8' }}>
       <Container className="py-5">
         <h2 className="text-center fw-bolder">
-          Our <span className="text-danger">Tour Plans</span> For You
+          Our <span className="text-info">Packages</span> For You
         </h2>
         <p className="text-secondary text-center">
           You`re guaranteed to find something that`s right for you.
