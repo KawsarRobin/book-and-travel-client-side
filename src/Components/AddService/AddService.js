@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import './AddService.css';
 
@@ -17,17 +18,17 @@ const AddService = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          alert('New Service Added Successfully');
+          alert('New Service Launched Successfully');
           reset();
         }
       });
   };
   return (
-    <div>
-      <h2 className="py-3">Add A New Service</h2>
+    <Container className=" mx-md-5 rounded rounded-3 border border-3 shadow my-5 bg-light">
+      <h3 className="py-3 text-secondary">Launch a New Service</h3>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="d-flex flex-column align-items-center justify-content-center pb-5"
+        className="d-flex flex-column pb-5"
       >
         <input
           placeholder="Type Service Name"
@@ -60,7 +61,7 @@ const AddService = () => {
 
         <input className="btn btn-outline-success" type="submit" />
       </form>
-    </div>
+    </Container>
   );
 };
 

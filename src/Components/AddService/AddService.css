@@ -1,7 +1,8 @@
 form input,
 textarea {
-  width: 50%;
-  margin-top: 15px;
+  height: 40px;
+  margin-top: 10px;
+  border: 2px solid rgb(14, 14, 156);
   border-radius: 5px;
 }
 form textarea {

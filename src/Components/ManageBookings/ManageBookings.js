@@ -4,7 +4,7 @@ import { Spinner, Table } from 'react-bootstrap';
 const ManageBookings = () => {
   const [allBookings, setAllBookings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [isApproved, setIsApproved] = useState(true);
+  const [isApproved, setIsApproved] = useState(false);
 
   //Load all the bookings
   useEffect(() => {
@@ -37,14 +37,14 @@ const ManageBookings = () => {
       .then((data) => {
         if (data.modifiedCount > 0) {
           alert('Booking Approved Succesfully');
-          setIsApproved(false);
+          setIsApproved(true);
         }
       });
   };
 
-  // Deleted or cancle booking by id
+  // Deleted or cancel booking by id
   const handleDelete = (id) => {
-    if (window.confirm('Are You Sure to cancel Booking?')) {
+    if (window.confirm('Are you sure to Cancel Booking?')) {
       const url = `https://mysterious-citadel-34425.herokuapp.com/deleteMyOrder/${id}`;
       fetch(url, {
         method: 'DELETE',
@@ -70,7 +70,7 @@ const ManageBookings = () => {
     );
   } else {
     return (
-      <div className="overflow-sm-scroll p-2">
+      <div className="overflow-auto p-2">
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
@@ -81,8 +81,7 @@ const ManageBookings = () => {
               <th>Trip List</th>
               <th>Booking date</th>
               <th>Status</th>
-              <th>Cancel</th>
-              <th>Approve</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -99,19 +98,18 @@ const ManageBookings = () => {
                 <td>
                   <button
                     onClick={() => handleDelete(booking._id)}
-                    className="btn btn-danger"
+                    className="btn btn-danger m-1"
                   >
                     Cancel <i className="fas fa-trash-alt "></i>
                   </button>
-                </td>
-                <td>
                   <button
                     onClick={() => handleUpdate(booking._id)}
-                    className="btn btn-success"
+                    className="btn btn-success m-1"
                   >
                     Approve
                   </button>
                 </td>
+                <td></td>
               </tr>
             ))}
           </tbody>

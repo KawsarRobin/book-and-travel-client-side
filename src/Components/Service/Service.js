@@ -1,28 +1,29 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import './Service';
 
 const Service = (props) => {
   const { name, img, description, _id, rating, time, price } = props.service;
   return (
     <Col>
-      <Card
-        style={{ backgroundColor: '#' }}
-        className="rounded rounded-3 shadow  h-100"
-      >
+      <Card className="rounded rounded-3 shadow bg-light h-100">
         <Card.Img variant="top" src={img} className="p-3  rounded rounded-3" />
-        <Card.Body className="">
+        <Card.Body>
           <Card.Title className="d-flex justify-content-between align-items-center">
             <h5>{name}</h5>
-            <h6>${price}</h6>
+            <h6 className="text-danger">${price}</h6>
           </Card.Title>
-          <Card.Text>
-            <p className="ps-2 text-start">
-              <i className="far fa-smile-beam"></i>{' '}
-              <span>{rating} Superb </span>
-            </p>
+          <div>
+            <h6 className="ps-2 text-start ">
+              <i className="far fa-smile-beam "></i>{' '}
+              <span>
+                {' '}
+                {rating >= 7 ? `${rating} Superb` : `${rating} Good`}
+              </span>
+            </h6>
             <span>{description.slice(0, 100)}...</span>
-          </Card.Text>{' '}
+          </div>{' '}
           <hr />
           <div className="d-flex justify-content-between px-3">
             <span>

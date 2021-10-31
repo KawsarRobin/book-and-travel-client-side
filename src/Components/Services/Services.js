@@ -23,7 +23,7 @@ const Services = () => {
     );
   } else {
     return (
-      <div style={{ backgroundColor: '#F3F4F8' }}>
+      <div style={{ backgroundColor: '#F0F9FF' }}>
         <Container className="py-5">
           <h2 className="text-center fw-bolder">
             Our <span className="text-info">Packages</span> For You
