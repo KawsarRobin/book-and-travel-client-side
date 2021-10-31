@@ -6,7 +6,7 @@ https://book-and-travel-cd69c.web.app/
 
 ## Features and tools
 
-- It's a full stack website created with -> HTML ,CSS, JS, REACT, MONGODB, FIREBASE, NODE.JS
+- It's a full stack website created with -> HTML ,CSS, JS, REACT,REACT REVEL, HASHLINK, MONGODB, FIREBASE, NODE.JS
 
 - Live preview of the website available for free.
 - Website is browse-able in full screen mode.

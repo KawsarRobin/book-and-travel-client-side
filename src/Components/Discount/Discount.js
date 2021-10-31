@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import Slide from 'react-reveal/Fade';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const Discount = () => {
   return (
@@ -38,15 +38,15 @@ const Discount = () => {
                   className="img-fluid"
                 />
                 <br />
-                <Link to="/login">
+                <HashLink to="#services">
                   <Button
-                    className="shadow-lg w-50 my-md-5 my-sm-2"
+                    className="shadow-lg my-md-5 my-sm-2"
                     variant="secondary"
                     size="lg"
                   >
-                    Explore Trips
+                    Visit Now!
                   </Button>
-                </Link>
+                </HashLink>
               </div>
             </Col>
           </Row>

@@ -25,7 +25,7 @@ const Services = () => {
     );
   } else {
     return (
-      <div style={{ backgroundColor: '#F0F9FF' }}>
+      <div id="services" style={{ backgroundColor: '#F0F9FF' }}>
         <Slide left>
           <Container className="py-5">
             <h2 className="text-center fw-bolder">

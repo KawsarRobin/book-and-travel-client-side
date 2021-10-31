@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const Banner = () => {
   return (
@@ -20,11 +20,11 @@ const Banner = () => {
                 rest is our responsibilities. We treat you as our family.
               </h5>
               <br />
-              <Link to="/home">
+              <HashLink to="#services">
                 <Button className="shadow" variant="outline-secondary">
                   Find Your Dream Trip
                 </Button>
-              </Link>
+              </HashLink>
             </Col>
             <Col>
               <img

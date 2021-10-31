@@ -31,7 +31,7 @@ const Service = (props) => {
             </span>
             <p>
               <Link to={`/placeorder/${_id}`}>
-                <Button size="sm" variant="outline-info">
+                <Button size="sm" variant="outline-secondary">
                   Book Now
                 </Button>
               </Link>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import Slide from 'react-reveal/Fade';
+import { HashLink } from 'react-router-hash-link';
 
 const AboutUs = () => {
   return (
@@ -43,12 +44,14 @@ const AboutUs = () => {
                 </p>
 
                 <br />
-                <Button
-                  className="shadow my-3 rounded-pill"
-                  variant="outline-dark"
-                >
-                  Explore Our Trips
-                </Button>
+                <HashLink to="#services">
+                  <Button
+                    className="shadow my-3 rounded-pill"
+                    variant="outline-dark"
+                  >
+                    Explore Our Trips
+                  </Button>
+                </HashLink>
               </div>
             </Col>
           </Row>
