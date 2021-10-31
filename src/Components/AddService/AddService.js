@@ -7,7 +7,7 @@ const AddService = () => {
   const onSubmit = (data) => {
     const service = data;
 
-    fetch('http://localhost:5000/addService', {
+    fetch('https://mysterious-citadel-34425.herokuapp.com/addService', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

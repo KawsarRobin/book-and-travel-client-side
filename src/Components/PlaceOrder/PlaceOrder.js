@@ -15,7 +15,7 @@ const PlaceOrder = () => {
 
   //Find single service
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${id}`)
+    fetch(`https://mysterious-citadel-34425.herokuapp.com/services/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setService(data);
@@ -34,7 +34,7 @@ const PlaceOrder = () => {
     service.status = status;
     delete service._id;
 
-    fetch('http://localhost:5000/addOrder', {
+    fetch('https://mysterious-citadel-34425.herokuapp.com/addOrder', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

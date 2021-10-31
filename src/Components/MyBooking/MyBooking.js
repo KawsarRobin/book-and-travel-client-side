@@ -10,7 +10,7 @@ const MyBooking = () => {
   //Load myBookings from database with email
   useEffect(() => {
     if (user.email) {
-      fetch(`http://localhost:5000/myOrders/${user.email}`, {
+      fetch(`https://mysterious-citadel-34425.herokuapp.com/myOrders/${user.email}`, {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
@@ -28,7 +28,7 @@ const MyBooking = () => {
 
   const handleDelete = (id) => {
     if (window.confirm('Are You Sure to cancel Booking?')) {
-      const url = `http://localhost:5000/deleteMyOrder/${id}`;
+      const url = `https://mysterious-citadel-34425.herokuapp.com/deleteMyOrder/${id}`;
       fetch(url, {
         method: 'DELETE',
       })

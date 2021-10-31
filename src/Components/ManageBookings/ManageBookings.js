@@ -8,7 +8,7 @@ const ManageBookings = () => {
 
   //Load all the bookings
   useEffect(() => {
-    fetch('http://localhost:5000/allOrders')
+    fetch('https://mysterious-citadel-34425.herokuapp.com/allOrders')
       .then((res) => res.json())
       .then((data) => {
         setAllBookings(data);
@@ -23,13 +23,16 @@ const ManageBookings = () => {
       status: 'Approved',
     };
 
-    fetch(`http://localhost:5000/upadateOrders/${id}`, {
-      method: 'PUT',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(status),
-    })
+    fetch(
+      `https://mysterious-citadel-34425.herokuapp.com/upadateOrders/${id}`,
+      {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(status),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
@@ -42,7 +45,7 @@ const ManageBookings = () => {
   // Deleted or cancle booking by id
   const handleDelete = (id) => {
     if (window.confirm('Are You Sure to cancel Booking?')) {
-      const url = `http://localhost:5000/deleteMyOrder/${id}`;
+      const url = `https://mysterious-citadel-34425.herokuapp.com/deleteMyOrder/${id}`;
       fetch(url, {
         method: 'DELETE',
       })
