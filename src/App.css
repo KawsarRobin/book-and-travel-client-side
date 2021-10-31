@@ -2,3 +2,9 @@
   text-align: center;
   font-family: 'Old Standard TT', serif;
 }
+.service:hover {
+  background-color: rgba(73, 96, 102, 0.849) !important;
+  color: white;
+  transform: scale(1.07);
+  transition: transform 0.2s ease-out 0s;
+}

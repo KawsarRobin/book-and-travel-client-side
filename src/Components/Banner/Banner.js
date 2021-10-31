@@ -18,7 +18,7 @@ const Banner = () => {
               is our responsibilities. We treat you as our family.
             </h5>
             <br />
-            <Link to="/login">
+            <Link to="/home">
               <Button className="shadow" variant="outline-secondary">
                 Find Your Dream Trip
               </Button>

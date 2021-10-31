@@ -21,7 +21,8 @@ const AddService = () => {
           alert('New Service Launched Successfully');
           reset();
         }
-      });
+      })
+      .catch((err) => console.log(err.message));
   };
   return (
     <Container className=" mx-md-5 rounded rounded-3 border border-3 shadow my-5 bg-light">

@@ -90,62 +90,6 @@ const ChooseUs = () => {
               <p>We work with team to ensure your safety</p>
             </div>
           </Col>
-          {/* <Col>
-            <Card
-              className="p-4 h-100 text-white shadow text-center"
-              style={{ backgroundColor: '#dd246e' }}
-            >
-              <div className="text-center">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/128/753/753651.png"
-                  alt=""
-                  className="w-25 mb-2"
-                />
-              </div>
-              <h6>MAIL US @</h6>
-              <small>
-                <strong>Support:</strong> kawsarrobin3@gmail.com
-              </small>
-              <small>
-                {' '}
-                <strong>Admin: </strong> kawsarrobin3@gmail.com
-              </small>
-            </Card>
-          </Col>
-          <Col>
-            <Card
-              className="p-4 h-100 text-white shadow text-center"
-              style={{ backgroundColor: '#8007e6' }}
-            >
-              <div className="text-center">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/128/484/484167.png"
-                  alt=""
-                  className="w-25 mb-2"
-                />
-              </div>
-              <h6>OUR LOCATION</h6>
-              <small>625 @ David Blake Road,</small>
-              <small>Adventureland, LA 14536, USA</small>
-            </Card>
-          </Col>
-          <Col>
-            <Card
-              className="p-4 h-100 text-white shadow text-center"
-              style={{ backgroundColor: '#0cae74' }}
-            >
-              <div className="text-center">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/128/1584/1584807.png"
-                  alt=""
-                  className="w-25 mb-2"
-                />
-              </div>
-              <h6>OPENING HOURS</h6>
-              <small>Mon – Sat 9 am to 8 pm</small>
-              <small>Sun – 10 am to 3 pm</small>
-            </Card>
-          </Col> */}
         </Row>
       </Container>
     </div>

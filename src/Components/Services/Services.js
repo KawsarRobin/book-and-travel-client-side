@@ -12,13 +12,14 @@ const Services = () => {
       .then((data) => {
         setServices(data);
         setIsLoading(false);
-      });
+      })
+      .catch((err) => console.log(err.message));
   }, []);
 
   if (isLoading) {
     return (
       <div className="text-center m-5">
-        <Spinner animation="border" variant="secondary" />;
+        <Spinner animation="border" variant="secondary" />
       </div>
     );
   } else {
@@ -31,7 +32,7 @@ const Services = () => {
           <p className="text-secondary text-center">
             You`re guaranteed to find something that`s right for you.
           </p>
-          <Row xs={1} md={3} className="g-4">
+          <Row xs={1} md={3} className="g-5">
             {services.map((service) => (
               <Service key={service._id} service={service}></Service>
             ))}

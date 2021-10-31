@@ -13,7 +13,8 @@ const ManageBookings = () => {
       .then((data) => {
         setAllBookings(data);
         setIsLoading(false);
-      });
+      })
+      .catch((err) => console.log(err.message));
   }, [isApproved]);
 
   // Update pending status to approved
@@ -36,10 +37,11 @@ const ManageBookings = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
-          alert('Booking Approved Succesfully');
+          alert('Booking Approved Successfully');
           setIsApproved(true);
         }
-      });
+      })
+      .catch((err) => console.log(err.message));
   };
 
   // Deleted or cancel booking by id
@@ -58,14 +60,15 @@ const ManageBookings = () => {
             );
             setAllBookings(remainingBooking);
           }
-        });
+        })
+        .catch((err) => console.log(err.message));
     }
   };
 
   if (isLoading) {
     return (
       <div className="text-center m-5">
-        <Spinner animation="border" variant="secondary" />;
+        <Spinner animation="border" variant="secondary" />
       </div>
     );
   } else {

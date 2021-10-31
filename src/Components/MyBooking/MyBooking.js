@@ -10,21 +10,25 @@ const MyBooking = () => {
   //Load myBookings from database with email
   useEffect(() => {
     if (user.email) {
-      fetch(`https://mysterious-citadel-34425.herokuapp.com/myOrders/${user.email}`, {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-        },
-      })
+      fetch(
+        `https://mysterious-citadel-34425.herokuapp.com/myOrders/${user.email}`,
+        {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+          },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           setMyBookings(data);
           setIsLoading(false);
-        });
+        })
+        .catch((err) => console.log(err.message));
     }
   }, [user.email]);
 
-  // Deleted or cancle booking by id
+  // Deleted or cancel booking by id
 
   const handleDelete = (id) => {
     if (window.confirm('Are You Sure to cancel Booking?')) {
@@ -41,14 +45,15 @@ const MyBooking = () => {
             );
             setMyBookings(remainingBooking);
           }
-        });
+        })
+        .catch((err) => console.log(err.message));
     }
   };
 
   if (isLoading) {
     return (
       <div className="text-center m-5">
-        <Spinner animation="border" variant="secondary" />;
+        <Spinner animation="border" variant="secondary" />
       </div>
     );
   } else {
@@ -65,7 +70,7 @@ const MyBooking = () => {
                   <Col>
                     <Card.Body className="text-secondary">
                       <h4>{booking.name}</h4>
-                      <h6>Booked at {booking.date}</h6>
+                      <h6>Booked on {booking.date}</h6>
                       <Button
                         onClick={() => handleDelete(booking._id)}
                         variant="danger"

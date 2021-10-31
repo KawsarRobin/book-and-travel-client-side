@@ -36,7 +36,6 @@ function App() {
               <Route path="/services">
                 <Services></Services>
               </Route>
-
               <PrivateRoute path="/placeorder/:id">
                 <PlaceOrder></PlaceOrder>
               </PrivateRoute>

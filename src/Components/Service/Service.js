@@ -7,7 +7,7 @@ const Service = (props) => {
   const { name, img, description, _id, rating, time, price } = props.service;
   return (
     <Col>
-      <Card className="rounded rounded-3 shadow bg-light h-100">
+      <Card className="rounded rounded-3 service shadow bg-light h-100">
         <Card.Img variant="top" src={img} className="p-3  rounded rounded-3" />
         <Card.Body>
           <Card.Title className="d-flex justify-content-between align-items-center">
@@ -31,7 +31,7 @@ const Service = (props) => {
             </span>
             <p>
               <Link to={`/placeorder/${_id}`}>
-                <Button size="sm" variant="outline-secondary">
+                <Button size="sm" variant="outline-info">
                   Book Now
                 </Button>
               </Link>

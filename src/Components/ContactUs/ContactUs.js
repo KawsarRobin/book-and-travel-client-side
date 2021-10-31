@@ -72,7 +72,7 @@ const ContactUs = () => {
               </div>
               <h6>OUR LOCATION</h6>
               <small>625 @ David Blake Road,</small>
-              <small>Adventureland, LA 14536, USA</small>
+              <small>AdventureLand, LA 14536, USA</small>
             </Card>
           </Col>
           <Col>

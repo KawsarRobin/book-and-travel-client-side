@@ -20,9 +20,11 @@ const PlaceOrder = () => {
       .then((data) => {
         setService(data);
         setIsLoading(false);
-      });
+      })
+      .catch((err) => console.log(err.message));
   }, []);
 
+  //Send order and user data to server
   const onSubmit = (data) => {
     const email = data.email;
     const status = 'Pending';
@@ -47,13 +49,14 @@ const PlaceOrder = () => {
           alert('Your Booking Placed Successfully');
           reset();
         }
-      });
+      })
+      .catch((err) => console.log(err.message));
   };
 
   if (isLoading) {
     return (
       <div className="text-center m-5">
-        <Spinner animation="border" variant="secondary" />;
+        <Spinner animation="border" variant="secondary" />
       </div>
     );
   } else {
@@ -62,7 +65,7 @@ const PlaceOrder = () => {
         <Container>
           <Row xs={1} md={2} className="gx-4">
             <Col>
-              <Card className="rounded rounded-3 shadow my-3 ">
+              <Card className="rounded rounded-3 bg-light shadow my-3 ">
                 <Card.Img
                   variant="top"
                   src={service.img}

@@ -13,7 +13,6 @@ const Discount = () => {
                 className=" rounded rounded-5 img-fluid"
                 src={`https://shinetheme.com/travelerdata/solotour/wp-content/uploads/2020/04/Group-208-1.png`}
                 alt=""
-                className="img-fluid"
               />
             </div>
           </Col>
