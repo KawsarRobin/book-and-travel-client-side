@@ -3,7 +3,7 @@ import { Card, Col, Container, Row } from 'react-bootstrap';
 
 const ContactUs = () => {
   return (
-    <div style={{ backgroundColor: '#E1F6FF' }}>
+    <div className="pb-5" style={{ backgroundColor: '#E1F6FF' }}>
       <Container className="py-5 overflow-hidden">
         <div className="text-center pb-3">
           <h2 className="fw-bolder ">

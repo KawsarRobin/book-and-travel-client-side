@@ -23,18 +23,12 @@ const Navigation = () => {
               <Nav.Link className=" text-black" as={Link} to="/home">
                 Home
               </Nav.Link>
-              <Nav.Link className=" text-black" as={Link} to="/about">
-                About
-              </Nav.Link>
-              <Nav.Link className=" text-black" as={Link} to="/contact">
-                Contact
-              </Nav.Link>
             </Nav>
             <Navbar.Collapse className="justify-content-end ">
               {user?.email ? (
                 <Navbar.Collapse className="justify-content-end ">
                   <Nav.Link as={Link} to="/bookings" className="text-dark">
-                    My Booking
+                    My Bookings
                   </Nav.Link>
                   <Nav.Link as={Link} to="/manageBooking" className="text-dark">
                     Manage Bookings

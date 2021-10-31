@@ -5,6 +5,12 @@ const AboutUs = () => {
   return (
     <div className="p-5">
       <Container>
+        <div className="text-center pb-3">
+          <h2 className="fw-bolder ">
+            Know More <span className="text-primary">About Us</span>
+          </h2>
+          <p className="text-secondary">Know About us to build your trust!</p>
+        </div>
         <Row xs={1} md={2} className="g-5">
           <Col>
             <div className="px-5">

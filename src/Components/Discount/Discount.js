@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Discount = () => {
   return (
-    <div className="p-5 bg-light">
+    <div className="p-5 " style={{ backgroundColor: '#F8EFBA' }}>
       <Container>
         <Row xs={1} md={2} className="g-5">
           <Col>
@@ -36,10 +36,10 @@ const Discount = () => {
               <Link to="/login">
                 <Button
                   className="shadow-lg w-50 my-md-5 my-sm-2"
-                  variant="outline-secondary"
+                  variant="secondary"
                   size="lg"
                 >
-                  Dream Trips!!
+                  Explore Trips
                 </Button>
               </Link>
             </div>
